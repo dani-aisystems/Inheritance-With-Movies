@@ -22,11 +22,17 @@ class ActionFilm : Film
         Explosions = explosions;
     }
 
+    public ActionFilm(string title, int year, double rating, string genre,
+        string director, int durationMinutes, bool watched, int explosions)
+        : base(title, year, rating, genre, director, durationMinutes, watched)
+    {
+        Explosions = explosions;
+    }
+
     public override void ShowInfo()
     {
         Console.WriteLine("Екшън филм: " + Title);
-        Console.WriteLine("Година: " + Year);
-        Console.WriteLine("IMDb оценка: " + Rating);
+        ShowCommonInfo();
         Console.WriteLine("Брой екшън сцени: " + Explosions);
         ShowWatched();
     }

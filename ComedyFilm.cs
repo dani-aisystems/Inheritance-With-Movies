@@ -16,11 +16,17 @@ class ComedyFilm : Film
         MainActor = mainActor;
     }
 
+    public ComedyFilm(string title, int year, double rating, string genre,
+        string director, int durationMinutes, bool watched, string mainActor)
+        : base(title, year, rating, genre, director, durationMinutes, watched)
+    {
+        MainActor = mainActor;
+    }
+
     public override void ShowInfo()
     {
         Console.WriteLine("Комедиен филм: " + Title);
-        Console.WriteLine("Година: " + Year);
-        Console.WriteLine("IMDb оценка: " + Rating);
+        ShowCommonInfo();
         Console.WriteLine("Главен актьор: " + MainActor);
         ShowWatched();
     }

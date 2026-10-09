@@ -16,11 +16,17 @@ class SuperheroFilm : ActionFilm
         Superhero = superhero;
     }
 
+    public SuperheroFilm(string title, int year, double rating, string genre,
+        string director, int durationMinutes, bool watched, int explosions, string superhero)
+        : base(title, year, rating, genre, director, durationMinutes, watched, explosions)
+    {
+        Superhero = superhero;
+    }
+
     public override void ShowInfo()
     {
         Console.WriteLine("Супергеройски филм: " + Title);
-        Console.WriteLine("Година: " + Year);
-        Console.WriteLine("IMDb оценка: " + Rating);
+        ShowCommonInfo();
         Console.WriteLine("Брой екшън сцени: " + Explosions);
         Console.WriteLine("Супергерой: " + Superhero);
         ShowWatched();
